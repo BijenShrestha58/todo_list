@@ -1,0 +1,214 @@
+.tasks-list {
+  width: 100vw;
+  .tasks {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .card {
+      width: calc(24% - 8px);
+      margin-right: 8px;
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 8px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+
+      border-radius: 4px;
+      margin-bottom: 8px;
+
+      // &:hover{
+      //   background:rgba(0, 0, 0, 0.495);
+      //   box-shadow: 2px 4px 8px rgba(0,0,0,0.12);
+      //   transition: 0.3s;
+      //   cursor: pointer;
+      // }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.nav {
+  width: 100vw;
+  height: 70px;
+  top: 0;
+  position: sticky;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  .nav-items {
+    display: flex;
+    margin-left: 20vw;
+    height: 100%;
+    align-items: center;
+
+    .nav-item {
+      margin: 0 4px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      border-radius: 6px;
+      width: 6vw;
+      height: 70%;
+      font-family: "Roboto", sans-serif;
+      font-size: 1em;
+      &:hover {
+        transition: 0.3s;
+        background-color: rgba(225, 225, 225, 0.2);
+        cursor: pointer;
+      }
+    }
+  }
+  .login-button {
+    background-color: rgba(225, 225, 225, 0.05);
+    border: none;
+    border-radius: 6px;
+    width: 5vw;
+    height: 50%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    position: absolute;
+    right: 5vw;
+    &:hover {
+      transition: 0.3s;
+      background-color: rgba(225, 225, 225, 0.2);
+      cursor: pointer;
+    }
+  }
+}
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  z-index: 9999;
+  align-items: flex-start;
+  justify-content: center;
+  .login-backdrop {
+    background-color: rgba(0, 0, 0, 0.61);
+    transition: 0.5s;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    &:hover {
+      backdrop-filter: blur(3px);
+    }
+  }
+  .login-box {
+    position: relative;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 20vh;
+    height: 60%;
+    width: 40%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px gray solid;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px gray;
+    .title {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    form {
+      width: 90%;
+      .inputs {
+        width: 100%;
+        margin-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .box {
+          display: flex;
+          height: 48px;
+          width: 80%;
+          margin-top: 16px;
+          .icon {
+            height: 100%;
+            width: 15%;
+            background-color: teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            &:hover{
+              background-color: rgb(0, 91, 91);
+              transition: 0.3s;
+              cursor: pointer;
+            }
+          }
+          .text {
+            height: 100%;
+            width: 85%;
+          }
+          input:focus::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+
+      button {
+        background-color: teal;
+        color: white;
+        margin-left: 10%;
+        height: 32px;
+        width: 100px;
+        border: none;
+        border-radius: 4px;
+      }
+      button:hover {
+        background-color: rgb(0, 91, 91);
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+    span{
+      color:blue;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        color:rgb(0, 0, 149);
+      }
+    }
+    .close {
+      height: 16px;
+      width: 16px;
+      top: 8px;
+      right: 8px;
+      position: absolute;
+      cursor: pointer;
+      img {
+        height: 100%;
+        width: 100%;
+        transition: 0.2s;
+        &:hover {
+          filter: brightness(2);
+        }
+      }
+    }
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.3s ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    top: -80vh;
+  }
+  to {
+    top: 0vh;
+  }
+}
+
